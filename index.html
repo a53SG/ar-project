@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Подключаем библиотеки AR.js и A-Frame -->
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+
+<body style="margin: 0;">
+  <!-- Создаем AR-сцену -->
+  <a-scene 
+    embedded 
+    arjs="trackingMethod: best;"
+  >
+    <!-- Маркер (картинка, которую будет сканировать камера) -->
+    <a-nft
+      type="nft"
+      url="https://ваш-хостинг/marker/marker-name" 
+      smooth="true"
+    >
+      <!-- 3D-модель (появится при распознавании маркера) -->
+      <a-entity 
+        gltf-model="https://ваш-хостинг/model.gltf" 
+        scale="0.1 0.1 0.1"
+      ></a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
