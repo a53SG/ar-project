@@ -8,23 +8,11 @@
 
 <body style="margin: 0;">
   <!-- Создаем AR-сцену -->
-  <a-scene 
-    embedded 
-    arjs="trackingMethod: best;"
-  >
-    <!-- Маркер (картинка, которую будет сканировать камера) -->
-    <a-nft
-      type="nft"
-      url="https://a53sg.github.io/ar-project/marker/nft1" 
-      smooth="true"
-    >
-      <!-- 3D-модель (появится при распознавании маркера) -->
-      <a-entity 
-        gltf-model="https://a53sg.github.io/ar-project/033.gltf" 
-        scale="0.1 0.1 0.1"
-      ></a-entity>
-    </a-nft>
-    <a-entity camera></a-entity>
-  </a-scene>
+<a-scene embedded arjs="sourceType: webcam;">
+  <a-marker preset="hiro">
+    <a-box position="0 0.5 0" color="red"></a-box>
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
 </body>
 </html>
